@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ERP Hidden Object Game</title>
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="hostyles.css">
+</head>
+<body>
+
+<div id="scene"></div>
+
+<div id="hud">
+  <div id="scene-title"></div>
+  <div id="hint"></div>
+</div>
+
+<div id="app-bar">
+  <button onclick="openApp('email')">Email <span id="badge-email" class="badge"></span></button>
+  <button onclick="openApp('teams')">Teams <span id="badge-teams" class="badge"></span></button>
+  <button onclick="openApp('phone')">Phone <span id="badge-phone" class="badge"></span></button>
+  <button onclick="openApp('erp')">ERP</button>
+  <button onclick="toggleMap()">Map</button>
+</div>
+
+<div id="app-email" class="app-window">
+  <h2>Email</h2>
+  <div id="email-content"></div>
+</div>
+
+<div id="app-teams" class="app-window">
+  <h2>Teams</h2>
+  <div id="teams-content"></div>
+</div>
+
+<div id="app-phone" class="app-window">
+  <h2>Phone</h2>
+  <div id="phone-content"></div>
+</div>
+
+<div id="app-erp" class="app-window">
+  <h2>ERP System</h2>
+  <p>Documents collected:</p>
+  <div id="erp-docs"></div>
+  <button onclick="submitToERP()">Submit</button>
+  <div id="erp-result"></div>
+</div>
+    
+<div id="map-window" class="app-window">
+  <h2>Office Map</h2>
+  <div id="map-rooms"></div>
+</div>
+
+<script src="js/hoscenes.js"></script>
+<script src="js/hoapp.js"></script>
+<script src="js/hogame.js"></script>
+<script src="js/hoload.js"></script>
+    
+<div id="endgame-window" class="end-window" style="display:none;">
+  <h1 class="endgame-title">CASE CLOSED</h1>
+
+  <div id="endgame-summary" class="endgame-box"></div>
+
+  <button class="restart-btn" onclick="restartGame()">Play Again</button>
+</div>
+
+</body>
+</html>
